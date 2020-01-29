@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Tab extends Component {
-    state = {}
-
-
-    render() {
-        return (<div
-            className="patients-list_tabs__tab"
-            onClick={() => { this.props.handleDisplayStatus(this.props.value) }}
-            style={this.props.active ? {
-                color: "#3398cc",
-                borderBottom: "solid 3px #3398cc",
-                paddingBottom: "17px"
-            } : null}
-        >
-            {this.props.title.toUpperCase()}({this.props.amount})
+function Tab(props) {
+    return (<div
+        className="patients-list_tabs__tab"
+        onClick={() => { props.handleDisplayStatus(props.value) }}
+        style={props.active ? {
+            color: "#3398cc",
+            borderBottom: "solid 3px #3398cc",
+            paddingBottom: "17px"
+        } : null}
+    >
+        {props.title.toUpperCase()}({props.amount})
         </div>);
-    }
 }
 
 export default Tab;
