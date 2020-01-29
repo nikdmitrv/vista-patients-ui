@@ -5,8 +5,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: 3c3c3c;
+  color: #3c3c3c;
   font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
 
 .patient-info {
@@ -14,6 +15,35 @@
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   margin: 10px;
   width: 100%;
+}
+
+.patient-info_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px;
+}
+
+.patient-info_content_inputContainer {
+  margin: 10px 0;
+}
+
+.patient-info_content__input {
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
+  width: 200px;
+  font-size: 14px;
+  color: #3c3c3c;
+  padding-left: 5px;
+}
+
+.patient-info_content__input:focus {
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
 }
 
 .patient-info_header {
@@ -58,8 +88,6 @@
 
 .patients-list_tabs__tab {
   padding: 20px;
-  border: 3px solid #d9d9d9;
-  border-style: hidden;
 }
 
 .patients-list_tabs__tab:hover {

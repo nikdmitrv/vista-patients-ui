@@ -4,13 +4,30 @@
     min-height: 100vh
     heigth: 100%
     display: flex
-    color: 3c3c3c
+    color: #3c3c3c
     font-family: 'Montserrat', sans-serif
+    font-size: 14px
 
 .patient-info
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75)
     margin: 10px
     width: 100%
+    &_content
+        display: flex
+        flex-direction: column
+        padding: 5px
+        &_inputContainer
+            margin: 10px 0
+        &__input
+            border: 0
+            border-bottom: 1px solid #d9d9d9
+            width: 200px
+            font-size: 14px
+            color: #3c3c3c
+            padding-left: 5px
+            &:focus
+                box-shadow: 0
+
     &_header
         background-color: #3398cc
         color: white
@@ -34,8 +51,6 @@
         background-color: #fafafa
         &__tab
             padding: 20px
-            border: 3px solid #d9d9d9
-            border-style: hidden
             &:hover
                 border-bottom: 3px solid #3398cc
                 padding-bottom: 2px

@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { selectPatientAC } from '../../../redux/actions'
 
 class Item extends Component {
     state = {}
+    handlePatientSelection = () => {
+        this.props.selectPatient(this.props.patientInfo)
+    }
     render() {
-        return (<tr className="patients-list_display_row">
-            <td>{this.props.historyNumber}</td>
-            <td>{this.props.name}</td>
-            <td>{this.props.bedNumber || this.props.cause}</td>
+        const { patientInfo } = this.props
+        return (<tr onClick={this.handlePatientSelection} className="patients-list_display_row">
+            <td>{patientInfo.historyNumber}</td>
+            <td>{`${patientInfo.lastName} ${patientInfo.firstName} ${patientInfo.patrName}`}</td>
+            <td>{patientInfo.bedNumber || patientInfo.cause}</td>
         </tr>);
     }
 }
 
-export default Item;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        selectPatient: (patientInfo) => dispatch(selectPatientAC(patientInfo))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Item);

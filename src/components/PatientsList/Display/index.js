@@ -14,19 +14,16 @@ class Display extends Component {
     render() {
         return (
             <table className="patients-list_display">
-                <tr>
-                    <th>№ ИБ</th>
-                    <th>ФИО</th>
-                    <th>{this.handleThirdField()}</th>
-                </tr>
-                {this.props.list && this.props.list.map(patient => {
-                    return <Item
-                        name={`${patient.lastName} ${patient.firstName} ${patient.patrName}`}
-                        historyNumber={patient.historyNumber}
-                        cause={patient.cause}
-                        bedNumber={patient.bedNumber}
-                    ></Item>
-                })}
+                <tbody>
+                    <tr>
+                        <th>№ ИБ</th>
+                        <th>ФИО</th>
+                        <th>{this.handleThirdField()}</th>
+                    </tr>
+                    {this.props.list && this.props.list.map(patient => {
+                        return <Item key={patient.historyNumber} patientInfo={patient}></Item>
+                    })}
+                </tbody>
             </table>);
     }
 }
