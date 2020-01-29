@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import Tabs from './Tabs'
+import Tabs from './Tabs';
+import Display from './Display';
 
 class PatientsList extends Component {
     state = {
@@ -29,10 +30,9 @@ class PatientsList extends Component {
                 quittingAmount={quitting ? quitting.length : 0}
                 presentAmount={present ? present.length : 0}
                 handleDisplayStatus={this.handleDisplayStatus}
+                displayStatus={displayStatus}
             ></Tabs>
-            <div className="patients-list_display">
-                {this.state[displayStatus] && this.state[displayStatus].map(patient => <p>{patient.firstName}</p>)}
-            </div>
+            <Display status={displayStatus} list={this.state[displayStatus]}></Display>
         </div>);
     }
 }
